@@ -5,8 +5,44 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="450" Width="450">
+    <Grid Margin="10,10,10,9">
+        <!-- Зона ввода/вывода данных  -->
+        <StackPanel Margin="10,10,10,366" Name="stackPanel">
+            <UniformGrid Rows="1" Height="{Binding ActualHeight, ElementName=stackPanel}">
+                <TextBox Name="firstValue" />
+                <TextBox Name="action" />
+                <TextBox Name="secondValue"/>
+                <TextBox Name="result" />
+            </UniformGrid>
+        </StackPanel>
+
+        <!-- Зона цифр  -->
+        <StackPanel Margin="10,56,10,163" Name="DigitsPanel">
+            <UniformGrid Columns="3" Height="{Binding ActualHeight, ElementName=DigitsPanel}" x:Name="DigitsGrid">
+                <Button Content="0" />
+                <Button Content="1" />
+                <Button Content="2"/>
+                <Button Content="3"/>
+                <Button Content="4"/>
+                <Button Content="5"/>
+                <Button Content="6"/>
+                <Button Content="7"/>
+                <Button Content="8"/>
+                <Button Content="9" />
+            </UniformGrid>
+        </StackPanel>
+
+
+        <StackPanel Margin="307,252,10,44" Name="OperatorsPanel" RenderTransformOrigin="0.5,0.5">
+            <UniformGrid Columns="1" Name="OperatorsGrid">
+                <Button Content="+" Click="Button_Click"/>
+                <Button Content="-" Click="Button_Click"/>
+                <Button Content="*" Click="Button_Click"/>
+                <Button Content="/" Click="Button_Click"/>
+                <Button Content="=" Click="Button_Click"/>
+            </UniformGrid>
+        </StackPanel>
 
     </Grid>
 </Window>
