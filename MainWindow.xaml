@@ -5,10 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="450">
+        
+        Background="Transparent"
+        
+        Title="MainWindow" Height="263" Width="450"
+        ResizeMode="NoResize" SizeToContent="Manual">
+
     <Grid Margin="10,10,10,9">
         <!-- Зона ввода/вывода данных  -->
-        <StackPanel Margin="10,10,10,366" Name="stackPanel">
+        <StackPanel Margin="10,10,10,0" Name="stackPanel" Height="39" VerticalAlignment="Top">
             <UniformGrid Rows="1" Height="{Binding ActualHeight, ElementName=stackPanel}">
                 <TextBox Name="firstValue" />
                 <TextBox Name="action" />
@@ -17,32 +22,38 @@
             </UniformGrid>
         </StackPanel>
 
-        <!-- Зона цифр  -->
-        <StackPanel Margin="10,56,10,163" Name="DigitsPanel">
-            <UniformGrid Columns="3" Height="{Binding ActualHeight, ElementName=DigitsPanel}" x:Name="DigitsGrid">
-                <Button Content="0" />
-                <Button Content="1" />
-                <Button Content="2"/>
-                <Button Content="3"/>
+        <!-- зона ввода -->
+        <StackPanel Margin="0,103,0,21" Name="DigitsPanel" HorizontalAlignment="Center" Width="410">
+            <UniformGrid Columns="4" x:Name="DigitsGrid" Height="85">
+                <!-- Верхняя строка -->
+                <Button Content="7"/>
+                <Button Content="8"/>
+                <Button Content="9"/>
+                <Button Content="/" Name="BDivide"  Click="BDivide_Click"/>
+
+                <!-- Средняя строка -->
                 <Button Content="4"/>
                 <Button Content="5"/>
                 <Button Content="6"/>
-                <Button Content="7"/>
-                <Button Content="8"/>
-                <Button Content="9" />
+                <Button Content="*" Name="BMulti" Click="BMulti_Click"/>
+
+                <!-- Нижняя строка -->
+                <Button Content="1"/>
+                <Button Content="2"/>
+                <Button Content="3" Name="B3" Click="B3_Click"/>
+                <Button Content="-" Name="Bminus" Click="Bminus_Click"/>
+
+                <!-- Последняя строка -->
+                <Button Content="0" Name="B0"/>
+                <Button Content="." Name="BPoint" Click="BPoint_Click"/>
+                <Button Content="=" Name="BEql" Click="BEql_Click"/>
+                <Button Content="+" Name="BPlus" Click="BPlus_Click"/>
+                <Button Content="Clear" Name="BClear" Click="BClear_Click"/>
             </UniformGrid>
         </StackPanel>
 
 
-        <StackPanel Margin="307,252,10,44" Name="OperatorsPanel" RenderTransformOrigin="0.5,0.5">
-            <UniformGrid Columns="1" Name="OperatorsGrid">
-                <Button Content="+" Click="Button_Click"/>
-                <Button Content="-" Click="Button_Click"/>
-                <Button Content="*" Click="Button_Click"/>
-                <Button Content="/" Click="Button_Click"/>
-                <Button Content="=" Click="Button_Click"/>
-            </UniformGrid>
-        </StackPanel>
+
 
     </Grid>
 </Window>

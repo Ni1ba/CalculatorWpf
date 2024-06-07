@@ -6,6 +6,8 @@ namespace Calculator
 
     public partial class MainWindow : Window
     {
+       
+
         //поля в калькуляторе
         public double _firstValue;
         public double _secondValue;
@@ -16,9 +18,14 @@ namespace Calculator
         public MainWindow()
         {
             InitializeComponent();
+           
             _firstValue = 0;
-            //useResult();
+            
+            
         }
+        
+
+
         //получение данных с wpf 
         public void RetrieveDataFromXmlFields()
         {
@@ -76,13 +83,62 @@ namespace Calculator
         {
             return textBox.Text;
         }
-                        
+
+
+
+
+
+        //---------------------Кнопки
+        private void BDivide_Click(object sender, RoutedEventArgs e)
+        {
+            action.Clear();
+            action.AppendText("/");
+        }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             RetrieveDataFromXmlFields();
             doResult();
         }
 
-        
+        private void BMulti_Click(object sender, RoutedEventArgs e)
+        {
+            action.Clear();
+            action.AppendText("*");
+        }
+
+        private void Bminus_Click(object sender, RoutedEventArgs e)
+        {
+            action.Clear();
+            action.AppendText("-");
+        }
+
+        private void BClear_Click(object sender, RoutedEventArgs e)
+        {
+            action.Clear();
+            firstValue.Clear();
+            secondValue.Clear();
+            result.Clear();
+        }
+
+        private void BPlus_Click(object sender, RoutedEventArgs e)
+        {
+            action.Clear();
+            action.AppendText("+");
+        }
+
+        private void BEql_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void BPoint_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void B3_Click(object sender, RoutedEventArgs e)
+        {
+            firstValue.AppendText("3");
+        }
     }
 }
