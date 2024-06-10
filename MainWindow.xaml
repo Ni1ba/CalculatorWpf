@@ -13,38 +13,39 @@
 
     <Grid Margin="10,10,10,9">
         <!-- Зона ввода/вывода данных  -->
-        <StackPanel Margin="10,10,10,0" Name="stackPanel" Height="39" VerticalAlignment="Top">
-            <UniformGrid Rows="1" Height="{Binding ActualHeight, ElementName=stackPanel}">
-                <TextBox Name="firstValue" />
-                <TextBox Name="action" />
-                <TextBox Name="secondValue"/>
+        <StackPanel Margin="10,10,10,0" Name="userInput" Height="39" VerticalAlignment="Top">
+            <UniformGrid Rows="1" Height="{Binding ActualHeight, ElementName=userInput}">
+                <TextBox Name="firstValue" Text=""/>
+                <TextBlock Name="action" Text=""  Background="#FFF" />
+                <TextBox Name="secondValue" Text=""/>
                 <TextBox Name="result" />
+                 <!--<TextBlock Name="test"  Background="#FFF"/>--> 
             </UniformGrid>
         </StackPanel>
 
         <!-- зона ввода -->
-        <StackPanel Margin="0,103,0,21" Name="DigitsPanel" HorizontalAlignment="Center" Width="410">
+        <StackPanel Margin="0,103,0,10" Name="DigitsPanel" HorizontalAlignment="Center" Width="410">
             <UniformGrid Columns="4" x:Name="DigitsGrid" Height="85">
                 <!-- Верхняя строка -->
-                <Button Content="7"/>
-                <Button Content="8"/>
-                <Button Content="9"/>
+                <Button Content="7" Name="B7" Click="B7_Click" />
+                <Button Content="8" Name="B8" Click="B8_Click"/>
+                <Button Content="9" Name="B9" Click="B9_Click"/>
                 <Button Content="/" Name="BDivide"  Click="BDivide_Click"/>
 
                 <!-- Средняя строка -->
-                <Button Content="4"/>
-                <Button Content="5"/>
-                <Button Content="6"/>
+                <Button Content="4" Name="B4" Click="B4_Click"/>
+                <Button Content="5" Name="B5" Click="B5_Click"/>
+                <Button Content="6" Name="B6" Click="B6_Click"/>
                 <Button Content="*" Name="BMulti" Click="BMulti_Click"/>
 
                 <!-- Нижняя строка -->
-                <Button Content="1"/>
-                <Button Content="2"/>
+                <Button Content="1" Name="B1" Click="B1_Click"/>
+                <Button Content="2" Name="B2" Click="B2_Click"/>
                 <Button Content="3" Name="B3" Click="B3_Click"/>
                 <Button Content="-" Name="Bminus" Click="Bminus_Click"/>
 
                 <!-- Последняя строка -->
-                <Button Content="0" Name="B0"/>
+                <Button Content="0" Name="B0" Click="B0_Click"/>
                 <Button Content="." Name="BPoint" Click="BPoint_Click"/>
                 <Button Content="=" Name="BEql" Click="BEql_Click"/>
                 <Button Content="+" Name="BPlus" Click="BPlus_Click"/>
